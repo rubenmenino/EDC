@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="anuncios" type="anunciosType"/>
+  <xs:complexType name="imagensType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="imagem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="anuncioType">
+    <xs:sequence>
+      <xs:element type="xs:integer" name="id"/>
+      <xs:element name="venda">
+      <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="vendido"/>
+            <xs:enumeration value="naovendido"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:integer" name="preco"/>
+      <xs:element type="xs:string" name="nome"/>
+      <xs:element type="xs:string" name="contacto"/>
+      <xs:element type="xs:string" name="email"/>
+      <xs:element type="xs:string" name="marca"/>
+      <xs:element type="xs:string" name="modelo"/>
+      <xs:element type="xs:integer" name="cilindrada"/>
+      <xs:element name="combustivel">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="gasoleo"/>
+            <xs:enumeration value="gasolina"/>
+            <xs:enumeration value="híbrido(gasolina)"/>
+            <xs:enumeration value="híbrido(gasoleo)"/>
+            <xs:enumeration value="elétrico"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="transmissao">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="manual"/>
+            <xs:enumeration value="automático"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="registo">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:pattern value="[0-9][0-9][0-9][0-9]"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="mes">
+      <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="janeiro"/>
+            <xs:enumeration value="fevereiro"/>
+            <xs:enumeration value="março"/>
+            <xs:enumeration value="abril"/>
+            <xs:enumeration value="maio"/>
+            <xs:enumeration value="junho"/>
+            <xs:enumeration value="julho"/>
+            <xs:enumeration value="agosto"/>
+            <xs:enumeration value="setembro"/>
+            <xs:enumeration value="outubro"/>
+            <xs:enumeration value="novembro"/>
+            <xs:enumeration value="dezembro"/>
+            <xs:enumeration value="Janeiro"/>
+            <xs:enumeration value="Fevereiro"/>
+            <xs:enumeration value="Março"/>
+            <xs:enumeration value="Abril"/>
+            <xs:enumeration value="Maio"/>
+            <xs:enumeration value="Junho"/>
+            <xs:enumeration value="Julho"/>
+            <xs:enumeration value="Agosto"/>
+            <xs:enumeration value="Setembro"/>
+            <xs:enumeration value="Outubro"/>
+            <xs:enumeration value="Novembro"/>
+            <xs:enumeration value="Dezembro"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="estado">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="usado"/>
+            <xs:enumeration value="novo"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:integer" name="potencia"/>
+      <xs:element type="xs:integer" name="quilometros"/>
+      <xs:element type="xs:integer" name="numportas"/>
+      <xs:element type="xs:integer" name="lotacao"/>
+      <xs:element type="imagensType" name="imagens"/>
+      <xs:element type="xs:string" name="descricao"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="anunciosType">
+    <xs:sequence>
+      <xs:element type="anuncioType" name="anuncio" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

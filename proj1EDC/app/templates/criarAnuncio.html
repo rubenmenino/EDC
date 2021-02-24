@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <br/><br/>
+    {% if error %}
+        <p style="font-weight:700; font-size:20px;">ERRO: Por favor, preencha todos os dados corretamente.</p>
+    {%  endif %}
+    <form action="." method="post" enctype="multipart/form-data">
+    <div class="hot_deals slider-items-products container">
+        <div class="row" style="margin: 2%;">
+            <div class="col-md-12">
+                <h3> Dados da viatura: </h3>
+                <div class="col-md-5" style="margin-left:4%; margin-right:4%;">
+                    {% csrf_token %}
+                    <p style="font-weight:700;">Marca: <input type="text" name="marca" /></p>
+                    <p style="font-weight:700;">Modelo: <input type="text" name="modelo" /></p>
+                    <p style="font-weight:700;">Cilindrada (cc): <input type="number" name="cilindrada" /></p>
+                    <p style="font-weight:700;">Ano do Registo: <input type="number" name="registo" /></p>
+                    <p style="font-weight:700;">Potência (cv): <input type="number" name="potencia" /></p>
+                    <p style="font-weight:700;">Quilometros (km): <input type="number" name="quilometros" /></p>
+                    <p style="font-weight:700;">Numero de portas: <input type="number" name="numportas" /></p>
+                    <p style="font-weight:700;">Lotação: <input type="number" name="lotacao" /></p>
+                    <p style="font-weight:700;">Preço: <input type="number" name="preco" /></p>
+                    <p style="font-weight:700;">Descrição (opcional): <input type="text" name="descricao" /></p>
+                    </div>
+                    <div class="col-md-5" style="margin-left:4%; margin-right:4%;">
+                    <label for="combustivel" style="padding-bottom: 10px;"> Combustivel: </label>
+                    <select id="combustivel" name="combustivel">
+                       <option value="gasoleo"> Gasoleo </option>
+                       <option value="gasolina"> Gasolina </option>
+                       <option value="híbrido(gasolina)"> Híbrido c/ Gasolina </option>
+                       <option value="híbrido(gasoleo)"> Híbrido c/ Gasoleo </option>
+                       <option value="elétrico"> Elétrico </option>
+                    </select>
+                    <br/>
+                    <label for="transmissao" style="padding-bottom: 10px;"> Transmissao: </label>
+                    <select id="transmissao" name="transmissao">
+                       <option value="manual"> Manual </option>
+                       <option value="automático"> Automática </option>
+                    </select>
+                    <br/>
+                    <label for="mes" style="padding-bottom: 10px;"> Mês do Registo: </label>
+                    <select id="mes" name="mes">
+                       <option value="janeiro"> Janeiro </option>
+                       <option value="fevereiro"> Fevereiro </option>
+                       <option value="março"> Março </option>
+                       <option value="abril"> Abril </option>
+                       <option value="maio"> Maio </option>
+                       <option value="junho"> Junho </option>
+                       <option value="julho"> Julho </option>
+                       <option value="agosto"> Agosto </option>
+                       <option value="setembro"> Setembro </option>
+                       <option value="outubro"> Outubro </option>
+                       <option value="novembro"> Novembro </option>
+                       <option value="dezembro"> Dezembro </option>
+                    </select>
+                    <br/>
+                    <label for="estado"> Estado: </label>
+                    <select id="estado" name="estado">
+                       <option value="novo"> Novo </option>
+                       <option value="usado"> Usado </option>
+                    </select>
+                    <br/>
+
+                    {{ form.as_p }}
+                    <h3> Seus dados: </h3>
+                    <p style="font-weight:700;">Seu nome: <input type="text" name="nome" /></p>
+                    <p style="font-weight:700;">Email: <input type="text" name="email" /></p>
+                    <p style="font-weight:700;">Contacto Telefónico (+351): <input type="number" name="contacto" /></p>
+                    </div>
+                    <div class="col-md-12">
+                        <p style="text-align:center;"><input style="background-color:#3E6274; width:25%; color:white; font-size:22px;" type="submit" value="Criar Anúncio" /></p>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </form>
+
+{% endblock %}

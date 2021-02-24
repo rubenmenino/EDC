@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!--Category slider Start-->
+    <br/>
+    <!-- best Pro Slider -->
+
+    {{ deals | safe}}
+
+    <div class="b-filter__inner bg-grey container">
+            <div class= bg-grey container >
+              <h1 style="color:whitesmoke; text-align: center">ENCONTRE O SEU AUTOMÓVEL</h1>
+                <br/>
+              <form class="b-filter" action="" method="post" >
+              {% csrf_token %}
+                <div class="btn-group bootstrap-select" style="margin-left: 10px">
+                  <select name="marca" class="selectpicker" data-width="100%" tabindex="-98">
+                    <option selected value="">Marca...</option>
+                    {% for marca in marcas %}
+                      <option> {{ marca | capfirst }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="btn-group bootstrap-select">
+                  <select name="modelo" class="selectpicker" data-width="100%" tabindex="-98">
+                        <option selected value="">Modelo...</option>
+                      {% for modelo in modelos %}
+                      <option> {{ modelo | capfirst }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="btn-group bootstrap-select">
+                  <select name="combustivel" class="selectpicker" data-width="100%" tabindex="-98">
+                    <option selected value="">Combustivel...</option>
+                      {% for comb in combustivel %}
+                      <option> {{ comb | capfirst}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <br/><br/>
+                <div  name="quilometros" class="btn-group bootstrap-select" style="text-align: center">
+                  <p style="font-size:20px; color: whitesmoke;">Quilometros (abaixo de:) <input type="number" name="quilometros" style="margin:10px; color: dimgray;"/></p>
+                </div>
+                <div name="registo" class="btn-group bootstrap-select" style="text-align: center">
+                   <p style="font-size:20px; color: whitesmoke;">Registo (acima de:) <input type="number" name="registo" style="margin:10px; color: dimgray;"/></p>
+                </div>
+                <div name="preco" class="btn-group bootstrap-select" style="text-align: center">
+                   <p style="font-size:20px; color: whitesmoke;">Preço (abaixo de:) <input type="number" name="preco" style="margin:10px; color: dimgray;"/></p>
+                </div>
+                <div>
+                  <div class="b-filter__btns" style="position: relative; z-index: 1">
+                    <button type="submit" class="btn btn-lg btn-primary" style="font-size: 25px">procurar veículo</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+    <br/><br/>
+    <div style="display:inline-block; width:100%;">
+        <h2 style="float: left; font-size:25px; font-weight:500;">ANÚNCIOS</h2>
+        <a href="/criaranuncio" style="float: right; padding-top: 15px">
+            <button style="background-color:#3E6274;color:white;font-size:24px;font-weight:600;"> Criar Anúncio </button>
+        </a>
+    </div>
+
+    {{ content | safe }}
+<h2>Latest News</h2>
+{% endblock %}

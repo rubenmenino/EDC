@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!--Category slider Start-->
+    <br/>
+    <!-- best Pro Slider -->
+
+    <!-- DEALS -->
+    <section class=" wow bounceInUp animated">
+          <div class="hot_deals slider-items-products container">
+            <div class="new_title">
+              <h2>Carros Premium Disponiveis</h2>
+              <div class="box-timer">
+                <div class="countbox_1 timer-grid"></div>
+              </div>
+            </div>
+              <div id="hot_deals" class="product-flexslider hidden-buttons">
+                  <div class="slider-items slider-width-col4 products-grid" style="height:100%">
+                  {% for deal in deals %}
+                    <div class="item">
+                      <div class="item-inner">
+                        <div class="item-img">
+                          <div class="item-img-info">
+                              <a class="product-image" style="margin-top:5%" href="anuncio?id={{ deal.id }}">
+                                  <img width="200px" height="200px" src="static/products-images/{{ deal.imagem }}"/>
+                              </a>
+                          </div>
+                        </div>
+                        <div class="item-info">
+                            <div class="info-inner">
+                                <div class="item-title">
+                                    <a style="text-transform: capitalize" href="anuncio?id={{ deal.id }}">
+                                        {{ deal.marca }} {{ deal.modelo }}
+                                    </a>
+                                </div>
+                                <div class="item-content">
+                                  <div class="item-price">
+                                    <div class="price-box"><span class="regular-price"><span class="price"> {{ deal.preco }}€</span> </span> </div>
+                                  </div>
+                                  <div class="other-info" style="padding-bottom:30px">
+                                      <div class="col-km">{{ deal.quilometros }}km</div>
+                                      <div class="col-engine">{{ deal.transmissao }}</div>
+                                      <div class="col-date">{{ deal.registo }}</div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                </div>
+              </div>
+          </div>
+        </section>
+
+    <!-- INFERENCIAS -->
+    <div class= bg-grey container >
+        <form class="b-filter" action="" method="post" >
+            {% csrf_token %}
+
+            <div class="row" style="text-align: center">
+                <div class="col-md-12">
+                    <button  {% if disableBtn == 'True' %}style="min-height:60px;margin-right: 8px;margin-left: 8px;padding: 8px; background-color: gray; color:aliceblue; border-radius: 4px;font-size: 16px" disabled {% else %} style="min-height:60px;font-weight:600; margin-right: 8px;margin-left: 8px; padding: 8px; background-color: #d9e135; color:#3E6274; border-radius: 4px;font-size: 16px" {% endif %} id="CriarInferencias" name="CriarInferencias" type="submit" value="CriarInferencias">Aplicar Inferências</button>
+                    <button id="MarcasVerdes" name="MarcasVerdes" type="submit" value="MarcasVerdes" title='Marcas com carros elétricos' style="min-height:60px; min-width:12%;margin-right: 8px;margin-left: 8px;font-weight:600;padding: 8px; background-color: #3E6274; color:aliceblue; border-radius: 4px;font-size: 16px">Marcas Verdes</button>
+                    <button id="MarcasSemiverdes" name="MarcasSemiverdes" type="submit" value="MarcasSemiverdes" title='Marcas com carros híbridos'style="min-height:60px;min-width:12%;margin-right: 8px;margin-left: 8px;font-weight:600;padding: 8px; background-color: #3E6274; color:aliceblue; border-radius: 4px;font-size: 16px">Marcas Semiverdes</button>
+                    <button id="Supercarros" name="Supercarros" type="submit" value="Supercarros" title='Carros com potência superior a 460cv'style="min-height:60px;min-width:12%;margin-right: 8px;margin-left: 8px;font-weight:600;padding: 8px; background-color: #3E6274; color:aliceblue; border-radius: 4px;font-size: 16px">Supercarros</button>
+                    <button id="Verificados" name="Verificados" type="submit" value="Verificados" title='Vendedores com pelo menos uma venda'style="min-height:60px;min-width:12%;margin-right: 8px;margin-left: 8px;font-weight:600;padding: 8px; background-color: #3E6274; color:aliceblue; border-radius: 4px;font-size: 16px">Verificados</button>
+                    <button id="Coupe" name="Coupe" type="submit" value="Coupe" title='Carros com dois lugares'style="min-height:60px;min-width:12%;margin-right: 8px;margin-left: 8px;font-weight:600;padding: 8px; background-color: #3E6274; color:aliceblue; border-radius: 4px;font-size: 16px">Veículos Coupes</button>
+                </div>
+            </div>
+        </form>
+        <div class="row" style="text-align: center">
+            <div class="col-md-12">
+                <br/>
+                {% for print in inferencia %}
+                    <p style="font-size: 18px"> {{print}} </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <!-- FILTROS -->
+    <div class="b-filter__inner bg-grey container">
+            <div class= bg-grey container >
+              <h1 style="color:whitesmoke; text-align: center">ENCONTRE O SEU AUTOMÓVEL</h1>
+                <br/>
+              <form class="b-filter" action="" method="post" >
+              {% csrf_token %}
+                <div class="btn-group bootstrap-select" style="margin-left: 10px">
+                  <select name="marca" class="selectpicker" data-width="100%" tabindex="-98">
+                    <option selected value="">Marca...</option>
+                    {% for marca in marcas %}
+                      <option> {{ marca | capfirst }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="btn-group bootstrap-select">
+                  <select name="modelo" class="selectpicker" data-width="100%" tabindex="-98">
+                        <option selected value="">Modelo...</option>
+                      {% for modelo in modelos %}
+                      <option> {{ modelo | capfirst }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="btn-group bootstrap-select">
+                  <select name="combustivel" class="selectpicker" data-width="100%" tabindex="-98">
+                    <option selected value="">Combustivel...</option>
+                      {% for comb in combustivel %}
+                      <option> {{ comb | capfirst}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <br/><br/>
+                <div  name="quilometros" class="btn-group bootstrap-select" style="text-align: center">
+                  <p style="font-size:20px; color: whitesmoke;">Quilometros (abaixo de:) <input type="number" name="quilometros" style="margin:10px; color: dimgray;"/></p>
+                </div>
+                <div name="registo" class="btn-group bootstrap-select" style="text-align: center">
+                   <p style="font-size:20px; color: whitesmoke;">Registo (acima de:) <input type="number" name="registo" style="margin:10px; color: dimgray;"/></p>
+                </div>
+                <div name="preco" class="btn-group bootstrap-select" style="text-align: center">
+                   <p style="font-size:20px; color: whitesmoke;">Preço (abaixo de:) <input type="number" name="preco" style="margin:10px; color: dimgray;"/></p>
+                </div>
+                <div>
+                  <div class="b-filter__btns" style="position: relative; z-index: 1">
+                    <button type="submit" class="btn btn-lg btn-primary" style="font-size: 25px">procurar veículo</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+    <br/><br/>
+
+    <div style="display:inline-block; width:100%;">
+        <h2 style="float: left; font-size:25px; font-weight:500;">ANÚNCIOS</h2>
+        <a href="/criaranuncio" style="float: right; padding-top: 15px">
+            <button style="background-color:#3E6274;color:white;font-size:24px;font-weight:600;"> Criar Anúncio </button>
+        </a>
+    </div>
+
+
+    <!-- ANUNCIOS -->
+    <div class="hot_deals slider-items-products container">
+            <div class="row">
+                <div class="col-md-12">
+                {% for anuncio in content %}
+                    <div class="col-md-3" style="border: 4px solid #3E6274; border-radius:5px; margin-left:4%; margin-right:4%; margin-top:2%;">
+                        <div class="item">
+                            <div class="item-inner">
+                                <div class="item-img">
+                                    <a class="product-image" href="anuncio?id={{ anuncio.id }}">
+                                        <img width="300px" height="200px" src="static/products-images/{{ anuncio.imagem }}"/>
+                                    </a>
+                                </div>
+                                <div class="item-info">
+                                    <div class="info-inner">
+                                        <a href="anuncio?id={{ anuncio.id }}">
+
+                                            <div class="item-title" style="text-transform: capitalize; font-size: 16px;">
+                                                {{ anuncio.marca }} {{ anuncio.modelo }}
+                                            </div>
+                                            <div class="item-price" style="text-transform: capitalize; font-size: 16px;">{{ anuncio.preco }}€</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+
+     <!-- DBPEDIA -->
+    <h2 style="color:#3E6274">From DBpedia</h2>
+    <div class="row" style="text-align: center">
+        <div class="col-md-12">
+            <p style="font-size: 18px; text-align: justify"> &nbsp;&nbsp;&nbsp;{{dbpedia}}</p>
+        </div>
+    </div>
+
+<h2>Latest News</h2>
+{% endblock %}

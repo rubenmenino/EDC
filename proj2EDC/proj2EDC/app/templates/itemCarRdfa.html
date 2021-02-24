@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div xmlns="http://www.w3.org/1999/xhtml"
+           xmlns:stand="http://stand.com/"
+           about="{{ newID }}" typeof="stand:Anuncio" >
+
+
+        <div class="container">
+        <form action="." method="post">
+            {% csrf_token %}
+            <div class="hot_deals slider-items-products container">
+                <div class="row" style="margin: 2%;">
+                    <div class="col-md-12">
+                        <div class="col-md-5" style="margin-left:4%; margin-right:4%;">
+                            <div class="row">
+                                <img property="stand:imagem"  style="display: block;margin-left: auto;margin-right: auto; max-width: 100%; max-height: 100%" src="../static/products-images/{{ info.imagem }}"/>
+                            </div>
+                            <div class="row" style="text-align:left;margin:30px;">
+                                <div typeof="stand:Marca" rel="stand:marca">
+                                <p property="stand:marca" rel="stand:Anuncio" content="{{ info.marca }}" style="font-size:30px; color:black; text-align:left; text-transform: capitalize;">   {{ info.marca }} {{ info.modelo }} </p>
+                                </div>
+                                <p style="font-size:30px; color:black; text-align:left; text-transform: capitalize;" property="stand:modelo" rel="stand:Anuncio" content="{{ info.modelo }}">
+                                <!-- <span property="stand:registo" content="{{ info.registo }}" style="font-weight:600; font-size:18px;">Ano e mês de registo: </span><span property="stand:mes" content="{{ info.mes }}" style="font-size:18px;">{{ info.mes }} de {{ info.registo }}</span> -->
+                            </div>
+                            <div class="row" style="text-align:left;margin:30px;">
+                                <p property="stand:preco" style="font-size:40px; color:darkred; display: inline; padding: 20px 25px 0px 0px">{{ info.preco }}€</p>
+
+                                <input  type="hidden" id="carID" name="carID" value="{{info.id}}"/>
+                                <input  type="hidden" id="person" name="person" value="{{info.person}}"/>
+                                <a>
+                                    <input id="Comprar" name="Comprar" type="submit" value="Comprar" style="opacity:0.8;background-color:green;color:white;font-size:18px;font-weight: 600; margin-left:10px;"/>
+                                </a>
+                                <a>
+                                    <input id="Apagar" name="Apagar" type="submit" value="Apagar" style="opacity:0.8; background-color:darkred;color:white;font-size:18px;font-weight: 600; margin-left:10px;"/>
+                                </a>
+                            </div>
+                            <div style="margin-left:30px">
+                            <h2 style="color: #3E6274; font-weight:700">Dados do vendedor:</h2>
+
+                                <div typeof="stand:Person" rel="stand:vendedor">
+                                    <span  property="stand:nome" rel="stand:Person" content="{{ info.vendedor }}" style="font-weight:600; font-size:18px; margin-bottom:5px;">Nome: </span><span style="font-size:18px;">{{ info.vendedor }}</span>
+                                    <br/><span  property="stand:email" rel="stand:Person" content="{{ info.email }}" style="font-weight:600; font-size:18px; margin-bottom:5px;">Email: </span><span style="font-size:18px;">{{ info.email }}</span>
+                                    <br/><span  property="stand:contacto" rel="stand:Person" content="{{ info.contacto }} " style="font-weight:600; font-size:18px; margin-bottom:5px;">Contacto Telefónico (+351): </span><span style="font-size:18px;">{{ info.contacto }}</span>
+                                </div>
+                                </div>
+                        </div>
+                        <div class="col-md-5" style="margin-left:4%; margin-right:4%;">
+                            <h2 style="color: #3E6274; font-weight:700">Mais informações:</h2>
+                            <div style="display:inline-block; margin-bottom:10px;">
+                                {% if info.venda == 'naovendido'  %}
+                                        <span content="{{ info.venda }}" property="stand:venda" style="font-weight:600; font-size:18px;">Estado de Venda: </span><span style="font-size:18px;">Não Vendido</span>
+                                {% else %}
+                                        <span content="{{ info.venda }}" property="stand:venda" style="font-weight:600; font-size:18px;">Estado de Venda: </span><span style="font-size:18px;">Vendido</span>
+                                {% endif %}
+                            </div>
+                            <br/>
+                            <div style="display:inline-block; margin-bottom:10px;">
+                                <span property="stand:combustivel"  content="{{ info.combustivel }}" style="font-weight:600; font-size:18px;">Combustivel: </span><span style="font-size:18px;">{{ info.combustivel }}</span>
+                            </div>
+                            <br/>
+                            <div style="display:inline-block; margin-bottom:10px;">
+                                <span property="stand:cilindrada" content="{{ info.cilindrada }}"  style="font-weight:600; font-size:18px;">Cilindrada: </span><span style="font-size:18px;">{{ info.cilindrada }}cc</span>
+                            </div>
+                            <br/>
+                            <div style="display:inline-block; margin-bottom:10px;">
+                                <span property="stand:transmissao" content="{{ info.transmissao }}" style="font-weight:600; font-size:18px;">Tipo de transmissão: </span><span style="font-size:18px;">{{ info.transmissao }}</span>
+                            </div>
+                            <br/>
+                            <div style="display:inline-block; margin-bottom:10px;">
+                                <span property="stand:registo" content="{{ info.registo }}" style="font-weight:600; font-size:18px;">Ano e mês de registo: </span><span property="stand:mes" content="{{ info.mes }}" style="font-size:18px;">{{ info.mes }} de {{ info.registo }}</span>
+                            </div>
+                            <br/>
+                            <div style="display:inline-block; margin-bottom:10px;">
+                                <span property="stand:estado" content="{{ info.estado }}" style="font-weight:600; font-size:18px;">Estado do automovel: </span><span style="font-size:18px;">{{ info.estado }}</span>
+                            </div>
+                            <br/>
+                            <div style="display:inline-block; margin-bottom:10px;">
+                                <span property="stand:potencia" content="{{ info.potencia }}" style="font-weight:600; font-size:18px;">Potencia: </span><span style="font-size:18px;">{{ info.potencia }}cv</span>
+                            </div>
+                            <br/>
+                            <div style="display:inline-block; margin-bottom:10px;">
+                                <span property="stand:quilometros"  content="{{ info.quilometros }}" style="font-weight:600; font-size:18px;">Quilometros: </span><span style="font-size:18px;">{{ info.quilometros }}km</span>
+                            </div>
+                            <br/>
+                            <div style="display:inline-block; margin-bottom:10px;">
+                                <span property="stand:numportas" content="{{ info.numportas }}" style="font-weight:600; font-size:18px;">Número de portas: </span><span style="font-size:18px;">{{ info.numportas }}</span>
+                            </div>
+                            <br/>
+                            <div style="display:inline-block; margin-bottom:10px;">
+                                <span property="stand:lotacao" content="{{ info.lotacao }}" style="font-weight:600; font-size:18px; ">Lotação: </span><span style="font-size:18px;">{{ info.lotacao }}</span>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div style="display:inline-block; margin-bottom:10px;">
+                                <p style="font-weight:600; font-size:18px; ">Descrição do Vendedor: </p>
+                                <span property="stand:descricao" content="{{ info.descricao }}" style="font-size:18px;"> {{ info.descricao }}</span>
+                            </div>
+                            <br/>
+                        </div>
+                    </div>
+                    </xsl:for-each>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+{% endblock %}

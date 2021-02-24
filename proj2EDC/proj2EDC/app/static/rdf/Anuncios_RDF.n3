@@ -1,0 +1,550 @@
+@prefix stand: <http://stand.com/>.
+
+stand:renault a stand:Marca;
+	stand:nome "renault".
+stand:mercedes a stand:Marca;
+	stand:nome "mercedes".
+stand:tesla a stand:Marca;
+	stand:nome "tesla".
+stand:volkswagen a stand:Marca;
+	stand:nome "volkswagen".
+stand:ferrari a stand:Marca;
+	stand:nome "ferrari".
+stand:seat a stand:Marca;
+	stand:nome "seat".
+stand:alfaromeo a stand:Marca;
+	stand:nome "alfa romeo".
+stand:bmw a stand:Marca;
+	stand:nome "bmw".
+stand:audi a stand:Marca;
+	stand:nome "audi".
+stand:nissan a stand:Marca;
+	stand:nome "nissan".
+stand:porsche a stand:Marca;
+	stand:nome "porsche".
+stand:citroen a stand:Marca;
+	stand:nome "citroen".
+
+stand:p1 a stand:Person;
+	stand:nome "João";
+	stand:contacto "234234234"^^xsd:integer;
+	stand:email "limao@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a1 a stand:Anuncio;
+	stand:id "1"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "22000"^^xsd:integer;
+	stand:vendedor stand:p1;
+	stand:marca stand:renault;
+	stand:modelo "megane";
+	stand:cilindrada "2000"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "manual";
+	stand:registo "2017"^^xsd:integer;
+	stand:mes "maio";
+	stand:estado "usado";
+	stand:potencia "220"^^xsd:integer;
+	stand:quilometros "7000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "1.png";
+	stand:descricao "Carro cinco estrelas, muito bem mantido, venha ver e apreciar.".
+	
+stand:p2 a stand:Person;
+	stand:nome "José";
+	stand:contacto "234234235"^^xsd:integer;
+	stand:email "ananas@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a2 a stand:Anuncio;
+	stand:id "2"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "23000"^^xsd:integer;
+	stand:vendedor stand:p2;
+	stand:marca stand:renault;
+	stand:modelo "megane";
+	stand:cilindrada "2000"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "manual";
+	stand:registo "2019"^^xsd:integer;
+	stand:mes "abril";
+	stand:estado "novo";
+	stand:potencia "220"^^xsd:integer;
+	stand:quilometros "50"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "2.png";
+	stand:descricao "Carro novo, versão Bose com todos os extras.".
+
+stand:p3 a stand:Person;
+	stand:nome "João";
+	stand:contacto "234234236"^^xsd:integer;
+	stand:email "maracuja@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a3 a stand:Anuncio;
+	stand:id "3"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "20000"^^xsd:integer;
+	stand:vendedor stand:p3;
+	stand:marca stand:renault;
+	stand:modelo "clio";
+	stand:cilindrada "1500"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "automático";
+	stand:registo "2020"^^xsd:integer;
+	stand:mes "junho";
+	stand:estado "usado";
+	stand:potencia "90"^^xsd:integer;
+	stand:quilometros "18000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "3.png";
+	stand:descricao "Clio a gasoleo com caixa automática, tem câmara de marcha atrás e ar condicionado automático".
+
+stand:p4 a stand:Person;
+	stand:nome "Catarina";
+	stand:contacto "234234222"^^xsd:integer;
+	stand:email "pistachio@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a4 a stand:Anuncio;
+	stand:id "4"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "55000"^^xsd:integer;
+	stand:vendedor stand:p4;
+	stand:marca stand:mercedes;
+	stand:modelo "a35";
+	stand:cilindrada "1998"^^xsd:integer;
+	stand:combustivel "gasolina";
+	stand:transmissao "automático";
+	stand:registo "2019"^^xsd:integer;
+	stand:mes "dezembro";
+	stand:estado "usado";
+	stand:potencia "300"^^xsd:integer;
+	stand:quilometros "6500"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "4.png";
+	stand:descricao "Mercedes classe A, amg 35, com michelin pilot sport 4s, câmara 360, distronic plus, baquets com memória.".
+
+stand:p5 a stand:Person;
+	stand:nome "Josefina";
+	stand:contacto "234234664"^^xsd:integer;
+	stand:email "tomate@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a5 a stand:Anuncio;
+	stand:id "5"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "45000"^^xsd:integer;
+	stand:vendedor stand:p5;
+	stand:marca stand:mercedes;
+	stand:modelo "e300e";
+	stand:cilindrada "2000"^^xsd:integer;
+	stand:combustivel "híbrido(gasolina)";
+	stand:transmissao "automático";
+	stand:registo "2019"^^xsd:integer;
+	stand:mes "março";
+	stand:estado "usado";
+	stand:potencia "300"^^xsd:integer;
+	stand:quilometros "17000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "5.png";
+	stand:descricao "Mercedes classe e motorização 300e, styling AMG, câmara de marcha atrás e bancos ventilados e aquecidos. 50 quilómetros de autonomia elétrica!!!".
+
+stand:p6 a stand:Person;
+	stand:nome "António";
+	stand:contacto "234234111"^^xsd:integer;
+	stand:email "pessego@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a6 a stand:Anuncio;
+	stand:id "6"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "72000"^^xsd:integer;
+	stand:vendedor stand:p6;
+	stand:marca stand:tesla;
+	stand:modelo "s";
+	stand:cilindrada "0"^^xsd:integer;
+	stand:combustivel "elétrico";
+	stand:transmissao "automático";
+	stand:registo "2018"^^xsd:integer;
+	stand:mes "maio";
+	stand:estado "usado";
+	stand:potencia "690"^^xsd:integer;
+	stand:quilometros "27000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "6.png";
+	stand:descricao "Tesla Model S P100D, com premium pack e autopilot.".
+
+stand:p7 a stand:Person;
+	stand:nome "Ricardo";
+	stand:contacto "234234277"^^xsd:integer;
+	stand:email "lima@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a7 a stand:Anuncio;
+	stand:id "7"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "10000"^^xsd:integer;
+	stand:vendedor stand:p7;
+	stand:marca stand:volkswagen;
+	stand:modelo "polo";
+	stand:cilindrada "1600"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "manual";
+	stand:registo "2012"^^xsd:integer;
+	stand:mes "novembro";
+	stand:estado "usado";
+	stand:potencia "110"^^xsd:integer;
+	stand:quilometros "77000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "7.png";
+	stand:descricao "Polo TDI bluemotion, muito económico, com a/c manual.".
+
+stand:p8 a stand:Person;
+	stand:nome "Rodrigo";
+	stand:contacto "234234222"^^xsd:integer;
+	stand:email "laranja@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a8 a stand:Anuncio;
+	stand:id "8"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "34000"^^xsd:integer;
+	stand:vendedor stand:p8;
+	stand:marca stand:volkswagen;
+	stand:modelo "golf";
+	stand:cilindrada "1600"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "manual";
+	stand:registo "2020"^^xsd:integer;
+	stand:mes "maio";
+	stand:estado "novo";
+	stand:potencia "130"^^xsd:integer;
+	stand:quilometros "27"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "8.png";
+	stand:descricao "Volkswagen golf TDI com exterior R-Design, cruise control automático, sensores de estacionamento à frente e a atrás.".
+
+stand:p9 a stand:Person;
+	stand:nome "Francisco";
+	stand:contacto "234234244"^^xsd:integer;
+	stand:email "favas@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a9 a stand:Anuncio;
+	stand:id "9"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "159000"^^xsd:integer;
+	stand:vendedor stand:p9;
+	stand:marca stand:ferrari;
+	stand:modelo "458";
+	stand:cilindrada "4580"^^xsd:integer;
+	stand:combustivel "gasolina";
+	stand:transmissao "automático";
+	stand:registo "2012"^^xsd:integer;
+	stand:mes "janeiro";
+	stand:estado "usado";
+	stand:potencia "561"^^xsd:integer;
+	stand:quilometros "15000"^^xsd:integer;
+	stand:numportas "3"^^xsd:integer;
+	stand:lotacao "2"^^xsd:integer;
+	stand:imagem "9.png";
+	stand:descricao "Ferrari 458 spider em rosso rubino, nunca levado à pista já com retrofit oficial da marca para Apple Carplay.".
+
+stand:p10 a stand:Person;
+	stand:nome "Pedro";
+	stand:contacto "234234211"^^xsd:integer;
+	stand:email "tarangina@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a10 a stand:Anuncio;
+	stand:id "10"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "5000"^^xsd:integer;
+	stand:vendedor stand:p10;
+	stand:marca stand:seat;
+	stand:modelo "ibiza";
+	stand:cilindrada "2000"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "manual";
+	stand:registo "2005"^^xsd:integer;
+	stand:mes "setembro";
+	stand:estado "usado";
+	stand:potencia "190"^^xsd:integer;
+	stand:quilometros "107000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "10.png";
+	stand:descricao "Seat ibiza nunca modificado, revisão feita recentemente com a/c manual e cruise control.".
+
+stand:p11 a stand:Person;
+	stand:nome "Jorge";
+	stand:contacto "234234999"^^xsd:integer;
+	stand:email "abacate@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a11 a stand:Anuncio;
+	stand:id "11"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "6000"^^xsd:integer;
+	stand:vendedor stand:p11;
+	stand:marca stand:alfaromeo;
+	stand:modelo "159";
+	stand:cilindrada "2200"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "manual";
+	stand:registo "2004"^^xsd:integer;
+	stand:mes "junho";
+	stand:estado "usado";
+	stand:potencia "189"^^xsd:integer;
+	stand:quilometros "227000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "11.png";
+	stand:descricao "Pintura em bom estado, pneus novos.".
+
+stand:p12 a stand:Person;
+	stand:nome "Maria";
+	stand:contacto "234234400"^^xsd:integer;
+	stand:email "malagueta@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a12 a stand:Anuncio;
+	stand:id "12"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "73000"^^xsd:integer;
+	stand:vendedor stand:p12;
+	stand:marca stand:bmw;
+	stand:modelo "m2";
+	stand:cilindrada "2998"^^xsd:integer;
+	stand:combustivel "gasolina";
+	stand:transmissao "manual";
+	stand:registo "2019"^^xsd:integer;
+	stand:mes "outubro";
+	stand:estado "usado";
+	stand:potencia "410"^^xsd:integer;
+	stand:quilometros "7600"^^xsd:integer;
+	stand:numportas "3"^^xsd:integer;
+	stand:lotacao "2"^^xsd:integer;
+	stand:imagem "12.png";
+	stand:descricao "BMW M2, tem todos extras relacionados com assistências de condução, travões de cerâmica e jantes de magnésio." .
+
+stand:p13 a stand:Person;
+	stand:nome "Natália";
+	stand:contacto "234234678"^^xsd:integer;
+	stand:email "morangos@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a13 a stand:Anuncio;
+	stand:id "13"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "37000"^^xsd:integer;
+	stand:vendedor stand:p13;
+	stand:marca stand:bmw;
+	stand:modelo "330e";
+	stand:cilindrada "2000"^^xsd:integer;
+	stand:combustivel "híbrido(gasolina)";
+	stand:transmissao "automático";
+	stand:registo "2017"^^xsd:integer;
+	stand:mes "fevereiro";
+	stand:estado "usado";
+	stand:potencia "258"^^xsd:integer;
+	stand:quilometros "37000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "13.png";
+	stand:descricao "Pack M exterior e interior." .
+
+stand:p14 a stand:Person;
+	stand:nome "Benecar";
+	stand:contacto "234234761"^^xsd:integer;
+	stand:email "cerejas@limonada.pt";
+	stand:numvendas "1"^^xsd:integer.
+
+stand:a14 a stand:Anuncio;
+	stand:id "14"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "25000"^^xsd:integer;
+	stand:vendedor stand:p14;
+	stand:marca stand:bmw;
+	stand:modelo "118d";
+	stand:cilindrada "2000"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "automático";
+	stand:registo "2014"^^xsd:integer;
+	stand:mes "julho";
+	stand:estado "usado";
+	stand:potencia "170"^^xsd:integer;
+	stand:quilometros "27000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "14.png";
+	stand:descricao "Pack exclusive, câmara de marcha atrás cruise control adaptativo e assistência à manutenção da faixa de rodagem." .
+
+stand:p15 a stand:Person;
+	stand:nome "Manuel";
+	stand:contacto "234234112"^^xsd:integer;
+	stand:email "couve@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a15 a stand:Anuncio;
+	stand:id "15"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "31000"^^xsd:integer;
+	stand:vendedor stand:p15;
+	stand:marca stand:audi;
+	stand:modelo "a7";
+	stand:cilindrada "2998"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "automático";
+	stand:registo "2011"^^xsd:integer;
+	stand:mes "maio";
+	stand:estado "usado";
+	stand:potencia "268"^^xsd:integer;
+	stand:quilometros "137000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "15.png";
+	stand:descricao "Toda a manutenção feita na marca." .
+
+stand:p16 a stand:Person;
+	stand:nome "Manuela";
+	stand:contacto "234234911"^^xsd:integer;
+	stand:email "framboesas@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a16 a stand:Anuncio;
+	stand:id "16"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "32000"^^xsd:integer;
+	stand:vendedor stand:p16;
+	stand:marca stand:audi;
+	stand:modelo "a3";
+	stand:cilindrada "1600"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "manual";
+	stand:registo "2018"^^xsd:integer;
+	stand:mes "novembro";
+	stand:estado "usado";
+	stand:potencia "119"^^xsd:integer;
+	stand:quilometros "37000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "16.png";
+	stand:descricao "S-line com interior em pele." .
+
+stand:p17 a stand:Person;
+	stand:nome "Frederico";
+	stand:contacto "234234888"^^xsd:integer;
+	stand:email "mirtilos@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a17 a stand:Anuncio;
+	stand:id "17"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "27000"^^xsd:integer;
+	stand:vendedor stand:p17;
+	stand:marca stand:nissan;
+	stand:modelo "juke";
+	stand:cilindrada "1000"^^xsd:integer;
+	stand:combustivel "gasolina";
+	stand:transmissao "manual";
+	stand:registo "2020"^^xsd:integer;
+	stand:mes "maio";
+	stand:estado "usado";
+	stand:potencia "100"^^xsd:integer;
+	stand:quilometros "6000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "17.png";
+	stand:descricao "Versão tekna premium" .
+
+stand:p18 a stand:Person;
+	stand:nome "Joaquim";
+	stand:contacto "234234333"^^xsd:integer;
+	stand:email "alface@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a18 a stand:Anuncio;
+	stand:id "18"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "15000"^^xsd:integer;
+	stand:vendedor stand:p18;
+	stand:marca stand:nissan;
+	stand:modelo "micra";
+	stand:cilindrada "1500"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "manual";
+	stand:registo "2017"^^xsd:integer;
+	stand:mes "maio";
+	stand:estado "usado";
+	stand:potencia "90"^^xsd:integer;
+	stand:quilometros "34000"^^xsd:integer;
+	stand:numportas "5"^^xsd:integer;
+	stand:lotacao "5"^^xsd:integer;
+	stand:imagem "18.png";
+	stand:descricao "Versão N-connecta" .
+
+stand:p19 a stand:Person;
+	stand:nome "Mariana";
+	stand:contacto "234234454"^^xsd:integer;
+	stand:email "ervilhas@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a19 a stand:Anuncio;
+	stand:id "19"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "99000"^^xsd:integer;
+	stand:vendedor stand:p19;
+	stand:marca stand:porsche;
+	stand:modelo "cayman";
+	stand:cilindrada "3600"^^xsd:integer;
+	stand:combustivel "gasolina";
+	stand:transmissao "manual";
+	stand:registo "2015"^^xsd:integer;
+	stand:mes "setembro";
+	stand:estado "usado";
+	stand:potencia "380"^^xsd:integer;
+	stand:quilometros "10000"^^xsd:integer;
+	stand:numportas "4"^^xsd:integer;
+	stand:lotacao "2"^^xsd:integer;
+	stand:imagem "19.png";
+	stand:descricao "Cayman GT4 com interior em alcantara, travões cerâmica e pacote sport chrono" .
+
+stand:p20 a stand:Person;
+	stand:nome "Nuno Bruno";
+	stand:contacto "234234600"^^xsd:integer;
+	stand:email "pepino@limonada.pt";
+	stand:numvendas "0"^^xsd:integer.
+
+stand:a20 a stand:Anuncio;
+	stand:id "20"^^xsd:integer;
+	stand:venda "naovendido";
+	stand:preco "8950"^^xsd:integer;
+	stand:vendedor stand:p20;
+	stand:marca stand:citroen;
+	stand:modelo "berlingo";
+	stand:cilindrada "1600"^^xsd:integer;
+	stand:combustivel "gasoleo";
+	stand:transmissao "manual";
+	stand:registo "2015"^^xsd:integer;
+	stand:mes "maio";
+	stand:estado "usado";
+	stand:potencia "100"^^xsd:integer;
+	stand:quilometros "98000"^^xsd:integer;
+	stand:numportas "3"^^xsd:integer;
+	stand:lotacao "3"^^xsd:integer;
+	stand:imagem "20.png";
+	stand:descricao "Preço negociável, com a/c manual, não fumador, tem gps, estofos em tecido, duas chaves originais" .
+
+
+
+

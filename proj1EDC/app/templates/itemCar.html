@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+    <form action="." method="post">
+        {% csrf_token %}
+        {{ info | safe }}
+    </form>
+    </div>
+{% endblock %}
