@@ -1,0 +1,29 @@
+----------------- 1 -------------
+
+select distinct ?p 
+where {
+    ?s ?p ?o .
+}
+
+
+----------------- 2 -------------
+
+PREFIX mov: <http://movies.org/pred/>
+
+SELECT ?fname
+WHERE {
+    ?real	mov:name "Ridley Scott" .
+    ?film	mov:directed_by ?real .
+    ?film	mov:name ?fname .
+}
+
+----------------- 3 -------------
+
+PREFIX mov: <http://movies.org/pred/>
+
+SELECT ?aname
+WHERE {
+    ?film	mov:name "1492 Conquest of Paradise" .
+    ?film	mov:starring ?actor .
+    ?actor	mov:name ?aname .
+}
